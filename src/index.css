@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Manrope:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+:root {
+  --paper: #f7f1e6;
+  --ink: #17322f;
+  --muted: #5d726b;
+  --line: #d8d2c6;
+  --teal: #1f6b63;
+  --deep: #0d3b36;
+  --coral: #e07c5b;
+  --moss: #78936b;
+  --sun: #f3d48c;
+  --font-heading: 'Fraunces', serif;
+  --font-body: 'Manrope', sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: var(--font-body);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background:
+    radial-gradient(circle at top left, rgba(224, 124, 91, 0.16), transparent 26%),
+    radial-gradient(circle at top right, rgba(31, 107, 99, 0.14), transparent 24%),
+    linear-gradient(180deg, #f8f3ea 0%, #f5efe3 100%);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+@theme inline {
+  --font-heading: var(--font-heading);
+  --font-body: var(--font-body);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: var(--font-body);
+  }
+}
+
+@layer components {
+  .hero-mesh {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(31, 107, 99, 0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(31, 107, 99, 0.04) 1px, transparent 1px);
+    background-size: 84px 84px;
+    mask-image: linear-gradient(180deg, rgba(0, 0, 0, 0.9), transparent 75%);
+    pointer-events: none;
+  }
+
+  .soft-card {
+    border: 1px solid var(--line);
+    border-radius: 2rem;
+    background: rgba(255, 255, 255, 0.72);
+    padding: 1.5rem;
+    box-shadow: 0 18px 50px rgba(16, 53, 45, 0.08);
+    backdrop-filter: blur(12px);
+  }
+
+  .eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border-radius: 999px;
+    background: rgba(31, 107, 99, 0.1);
+    padding: 0.55rem 0.9rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--teal);
+  }
+
+  .hero-video {
+    background:
+      radial-gradient(circle at top, rgba(255, 255, 255, 0.12), transparent 38%),
+      linear-gradient(180deg, rgba(14, 54, 49, 0.65), rgba(14, 54, 49, 0.25));
+  }
+}
